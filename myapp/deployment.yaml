@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: myapp
+  name: myapp
 spec:
- replicas: 3
- selector:
-  matchLabels:
-   app: myapp
- template:
-  metadata:
-   labels:
-    app: myapp
-    training: gitops-basic
- spec:
-  containers:
-  - name: nginx
-    image: nginx
-  volumes:
-  - name: config-volume
-    configMap:
-      name: myapp
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+     labels:
+       app: myapp
+       training: gitops-basic
+  spec:
+    containers:
+    - name: nginx
+      image: nginx
+    volumes:
+    - name: config-volume
+      configMap:
+        name: myapp
